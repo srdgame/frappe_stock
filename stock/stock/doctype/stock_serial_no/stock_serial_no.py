@@ -49,6 +49,14 @@ class StockSerialNo(Document):
 	def on_submit(self):
 		self.__in_warehouse(self.warehouse)
 
+	def get_pin_code(self):
+		pin = frappe.get_value("Make Serial NO", self.serial_no, 'pin_code')
+		if not pin:
+			for attr in self.attributes:
+				if attr.attr_name in ['pin_code', 'PIN_CODE', 'pincode', 'PINCODE']:
+					pin = attr.value
+		return pin
+
 '''
 def stock_serial_no_query(doctype, txt, searchfield, start, page_len, filters):
 	if not filters:
