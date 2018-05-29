@@ -51,6 +51,13 @@ frappe.ui.form.on("Stock Serial No", "item_code", function(frm) {
 					var row = frappe.model.add_child(cur_frm.doc, "Stock Item AttributeValue", "attributes");
 					row.attribute = d.value;
 					row.attr_name = d.description;
+					if(row.attr_name == 'pin_code' || row.attr_name == 'PIN_CODE'
+						|| row.attr_name == 'pincode' || row.attr_name == 'PINCODE') {
+						var max = 999;
+						var min = 0;
+						var val = '00' + Math.floor(Math.random()*(max-min+1)+min);
+						row.value = val.slice(-3);
+					}
 				});
 			}
 			refresh_field("attributes");
