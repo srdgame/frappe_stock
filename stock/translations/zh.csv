@@ -70,7 +70,7 @@ DocType: Stock Delivery OrderItem,Serial No,
 DocType: Stock Delivery Order,Series,
 DocType: Stock Entry,Source Warehouse,
 apps/stock/stock/stock/doctype/stock_entry/stock_entry.py +40,Source Warehouse is required,
-DocType: Stock Batch No,Stock,
+DocType: Stock Batch No,Stock,库存
 DocType: Stock Batch No,Stock Batch No,
 DocType: Stock Delivery Order,Stock Delivery Order,
 DocType: Stock Delivery OrderItem,Stock Delivery OrderItem,
